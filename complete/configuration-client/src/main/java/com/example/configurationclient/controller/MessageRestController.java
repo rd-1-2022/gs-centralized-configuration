@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2020 the original author or authors.
+ * Copyright 2021 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,23 @@
  * limitations under the License.
  */
 
-package com.example.configurationclient;
+
+package com.example.configurationclient.controller;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
-public class ConfigurationClientApplication {
+@RefreshScope
+@RestController
+public class MessageRestController {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ConfigurationClientApplication.class, args);
+	@Value("${message:Hello default}")
+	private String message;
+
+	@RequestMapping("/message")
+	public String getMessage() {
+		return this.message;
 	}
 }
-

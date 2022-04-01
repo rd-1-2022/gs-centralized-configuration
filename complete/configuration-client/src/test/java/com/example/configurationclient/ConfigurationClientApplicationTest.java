@@ -18,6 +18,7 @@ package com.example.configurationclient;
 
 import static org.assertj.core.api.Assertions.*;
 
+import com.example.configurationclient.controller.MessageRestController;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
