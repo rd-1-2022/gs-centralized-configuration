@@ -19,6 +19,12 @@ public class MessageRestController {
 }
 ```
 
+## Building and running
+
+```bash
+./mvnw spring-boot:run
+```
+
 Invoking `curl http://localhost:8080/message` will display the message.
 
 The `application.properties` file contains the configuration to connect to a Configuration server.
